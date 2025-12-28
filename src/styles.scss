@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+
+$primary-color: #007bff;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}

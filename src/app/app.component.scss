@@ -1,0 +1,937 @@
+/* Paleta basada en el logo */
+$adore-pink: #ff3b6b; // ajusta si quieres más fiel
+$adore-grey: #bbbbbb;
+$adore-dark: #1f1f24;
+$adore-pinky: #f5c5da;
+$adore-gray: #5b5b5b;
+
+body {
+  padding-top: 70px; // para que no se esconda nada bajo la navbar fixed-top
+}
+
+.navbar {
+  background-color: rgba(24, 24, 28, 0.75) !important;
+  backdrop-filter: blur(6px);
+}
+
+#navbarContent {
+  color: white !important;
+}
+/* Logo pequeño en la navbar */
+.logo-adore {
+  height: 36px;
+  display: block;
+  height: 26px;
+  filter: brightness(1.2);
+}
+
+/* Hero */
+.hero-adore {
+  background: url("/images/hotel.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+}
+
+.hero-band {
+  padding: 4rem 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.72) 20%,
+    rgba(0, 0, 0, 0.72) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  max-width: 720px;
+  width: 100%;
+}
+
+.hero-tagline {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: $adore-grey;
+}
+
+/* Botón principal con el rosa del corazón */
+.btn-primary {
+  background-color: $adore-pink;
+  border-color: $adore-pink;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}
+
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  color: #b25d82;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.8rem;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, $adore-pink, transparent);
+  }
+}
+
+h2.section-title {
+  display: inline-block;
+}
+
+/* Tarjetas habitaciones */
+#habitaciones .card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.adore-step-card {
+  border-radius: 1rem;
+  background: #5f3447;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  h4 {
+    color: #bfa0ad;
+    font-weight: 600;
+  }
+
+  p {
+    color: $adore-grey;
+  }
+
+  &:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Todas las secciones: para poder usar pseudo-elementos bonitos */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* CONCEPTO – fondo oscuro romántico con degradado */
+#concepto {
+  position: relative;
+  background-color: #f1e8ed;
+  padding: 5rem 0 13rem; // más padding abajo para que el fade respire
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Marca de agua en CONCEPTO (corazón gigante muy suave) */
+#concepto::before {
+  content: "❤";
+  position: absolute;
+  font-size: 140vh;
+  line-height: 1;
+  right: 31%;
+  top: -15%;
+  color: rgba(255, 255, 255, 0.432);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#concepto::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 220px; /* MÁS largo para que no se note el salto */
+
+  background: linear-gradient(
+    to bottom,
+    rgba(241, 232, 237, 0) 0%,
+    rgba(241, 232, 237, 0.15) 25%,
+    rgba(250, 247, 248, 0.65) 70%,
+    rgba(250, 247, 248, 1) 100%
+  );
+
+  pointer-events: none;
+  z-index: 3; /* encima del fondo, pero el contenido sigue en z=2 */
+}
+#concepto .container {
+  position: relative;
+  z-index: 2;
+}
+#concepto::before {
+  z-index: 0;
+}
+/* SOBRE EL HOTEL – degradado suave claro */
+// section:nth-of-type(3) {
+//   /* asumiendo que es el siguiente <section> tras #concepto */
+//   background: radial-gradient(
+//       circle at bottom right,
+//       rgba(255, 59, 107, 0.08),
+//       transparent 60%
+//     ),
+//     #ffffff;
+// }
+
+/* HABITACIONES – mantener claro, pero con toque rosado */
+// #habitaciones {
+//   background: radial-gradient(
+//       circle at top right,
+//       rgba(255, 59, 107, 0.12),
+//       transparent 55%
+//     ),
+//     #f7f7fb;
+// }
+
+/* Marca de agua sutil en HABITACIONES */
+#habitaciones::before {
+  content: "A";
+  position: absolute;
+  font-size: 16rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.02);
+  left: -4rem;
+  bottom: -6rem;
+  pointer-events: none;
+}
+
+/* RESERVAS – degradado “cálido” que invita a la acción */
+#reservas {
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe3eb 40%, #ffffff 100%);
+}
+
+/* CONTACTO – toquecito elegante oscuro-claro */
+#contacto {
+  background: radial-gradient(
+      circle at top left,
+      rgba(31, 31, 36, 0.08),
+      transparent 60%
+    ),
+    #f8f9fb;
+}
+
+.hero-adore {
+  position: relative;
+}
+
+.hero-adore::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #421f2c 100%);
+}
+
+#sobre-adore {
+  position: relative;
+  overflow: hidden;
+  background: #faf7f8; // o #ffffff si lo quieres más limpio
+  z-index: 2;
+
+  margin-top: -90px; /* SOLAPE: sube la sección 2 */
+  padding-top: 90px;
+}
+
+#sobre-adore::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  /* Luz suave, no símbolo */
+  background: radial-gradient(
+      circle at 15% 25%,
+      rgba(255, 59, 107, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(circle at 85% 30%, rgba(95, 52, 71, 0.08), transparent 50%),
+    radial-gradient(
+      circle at 25% 85%,
+      rgba(255, 59, 107, 0.07),
+      transparent 55%
+    ),
+    radial-gradient(circle at 90% 80%, rgba(95, 52, 71, 0.06), transparent 55%);
+  opacity: 1;
+}
+
+/* Asegura que el contenido quede por encima */
+#sobre-adore > .container {
+  position: relative;
+  z-index: 2;
+}
+
+#sobre-adore::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgb(245, 240, 243) 0%,
+    rgba(250, 247, 248, 0) 100%
+  );
+  color: #f1e8ed;
+}
+
+.section-wave {
+  margin-top: -50px; // para que no se vea línea
+  line-height: 0;
+}
+
+.section-wave svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+/* Esta wave “muerde” el fondo oscuro y se funde con el blanco */
+.section-wave-light path {
+  fill: #b11313; // color de la sección Sobre Adore
+}
+
+/* Layout Sobre Adore */
+#sobre-adore p {
+  color: $adore-dark;
+}
+
+/* Cita destacada */
+.adore-quote {
+  border-left: 4px solid $adore-pink;
+  padding-left: 1rem;
+  font-style: italic;
+  color: $adore-grey;
+  font-size: 0.95rem;
+}
+
+/* Tarjetas de highlights */
+.adore-highlight-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  padding: 1.1rem 1.3rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(95, 52, 71, 0.08);
+  backdrop-filter: blur(2px);
+
+  h5 {
+    font-weight: 600;
+    color: $adore-dark;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $adore-grey;
+  }
+}
+
+/* Píldoras de atributos */
+.adore-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.adore-pill {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(95, 52, 71, 0.06);
+  color: $adore-dark;
+}
+.adore-photo-wrapper {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.adore-photo {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 260px;
+}
+
+.adore-left-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1; // por encima de los corazones de fondo
+}
+
+/* Tarjetas con imagen */
+.adore-step-card {
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+}
+
+.adore-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.step-media {
+  height: 150px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* degradado encima para que siempre se vea bien */
+.step-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+/* Número bonito */
+.step-badge {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 59, 107, 0.95); /* tu $adore-pink */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.step-content {
+  padding: 1.2rem 1.2rem 1.4rem;
+  color: #fff;
+}
+
+.step-content h4 {
+  font-weight: 700;
+}
+
+.step-content p {
+  color: rgba(50, 50, 50, 0.88);
+  font-size: 0.8rem;
+}
+
+/* Imágenes por tarjeta */
+.step-1 .step-media {
+  background-image: url("/images/match.png");
+}
+
+.step-2 .step-media {
+  background-image: url("/images/quiero.png");
+}
+
+.step-3 .step-media {
+  background-image: url("/images/encuentro.png");
+}
+
+/* Grid experiencias + productos */
+.adore-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  z-index: 1;
+}
+
+/* Comunes */
+.adore-product {
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+  transition: transform 0.25s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Experiencias (arriba) */
+.adore-product.large {
+  grid-column: span 2;
+  height: 250px;
+}
+
+/* Productos (abajo) */
+.adore-product.small {
+  height: 110px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .adore-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .adore-product.large {
+    grid-column: span 2;
+    height: 160px;
+  }
+
+  .adore-product.small {
+    height: 120px;
+  }
+}
+.adore-experience {
+  border-radius: 1.5rem;
+  padding: 1.4rem 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(95, 52, 71, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+
+  h4 {
+    font-weight: 700;
+    color: $adore-dark;
+  }
+
+  p {
+    color: $adore-grey;
+  }
+}
+
+.adore-experience-list {
+  padding-left: 1.1rem;
+
+  li {
+    margin-bottom: 0.5rem;
+    color: $adore-dark;
+  }
+
+  li::marker {
+    color: $adore-pink;
+  }
+}
+
+/* PARALLAX: imagen fija detrás del concepto */
+.habitacion {
+  position: relative;
+  padding: 5rem 0 10rem 0;
+  color: #000000;
+
+  background: linear-gradient(
+      to bottom,
+      rgba(251, 248, 250, 0.623),
+      rgba(251, 248, 250, 0.623)
+    ),
+    url("/images/terraza.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+#habitaciones .card {
+  border: 1px solid rgba(95, 52, 71, 0.12);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+  transform: translateZ(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#habitaciones .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+}
+
+#habitaciones .card-body {
+  background: linear-gradient(to bottom, #ffd7d7 0%, #fff7fa 100%);
+}
+
+#habitaciones .fw-bold {
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+#habitaciones .card::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff3b6b, transparent);
+}
+
+.room-price {
+  margin-top: 0.8rem;
+}
+
+.price-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  background: rgba(255, 59, 107, 0.12); // rosa muy suave
+  color: #5f3447; // elegante, no chillón
+
+  border: 1px solid rgba(255, 59, 107, 0.25);
+}
+
+/* Corazón / marca de agua si ya lo tienes */
+.concepto-adore::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background: radial-gradient(
+    circle at 85% 15%,
+    rgba(255, 59, 107, 0.25),
+    transparent 45%
+  );
+}
+
+/* Asegura que el contenido vaya por encima */
+.concepto-adore .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fallback: en móvil quitamos fixed (iOS suele fallar) */
+@media (max-width: 991px) {
+  .concepto-adore {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 991px) {
+  .habitacion {
+    background-attachment: scroll;
+  }
+}
+
+#adore-reservas,
+#reservas {
+  position: relative;
+}
+
+.selected-room-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.1);
+  border: 1px solid rgba(255, 59, 107, 0.2);
+  color: $adore-dark;
+  font-size: 0.92rem;
+}
+
+.pill-clear {
+  border: 0;
+  background: transparent;
+  color: $adore-pink;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+}
+.pill-clear:hover {
+  text-decoration: underline;
+}
+
+/* “toque especial”: cuando hay habitación seleccionada, resaltamos el formulario */
+.adore-reservas .reservas-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease,
+    border-color 0.25s ease;
+}
+.adore-reservas .reservas-card.has-room {
+  border-color: rgba(255, 59, 107, 0.25);
+  box-shadow: 0 26px 60px rgba(255, 59, 107, 0.1),
+    0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* RESERVAS – elegante, glass y romántico */
+.adore-reservas {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe3eb 40%, #ffffff 100%);
+}
+
+.adore-reservas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 59, 107, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(circle at 85% 70%, rgba(95, 52, 71, 0.1), transparent 55%);
+}
+
+.reservas-wrap {
+  max-width: 980px;
+  position: relative;
+  z-index: 1;
+}
+
+.reservas-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(95, 52, 71, 0.12);
+  border-radius: 1.6rem;
+  padding: 1.6rem 1.6rem 1.8rem;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.reservas-card.has-room {
+  border-color: rgba(255, 59, 107, 0.28);
+  box-shadow: 0 26px 60px rgba(255, 59, 107, 0.1),
+    0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+.reservas-subtitle {
+  color: $adore-gray;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Inputs finos */
+.form-control-adore {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(95, 52, 71, 0.18);
+
+  //background: rgba(255, 255, 255, 0.96);
+
+  &:focus {
+    border-color: rgba(255, 59, 107, 0.55);
+    box-shadow: 0 0 0 0.2rem rgba(255, 59, 107, 0.14);
+  }
+}
+
+#reservas .form-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: $adore-gray;
+}
+
+/* Steps */
+.reservas-steps {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.r-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(95, 52, 71, 0.06);
+  color: $adore-dark;
+  font-size: 0.85rem;
+}
+
+.r-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 59, 107, 0.95);
+}
+
+/* Room pill */
+.selected-room-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.1);
+  border: 1px solid rgba(255, 59, 107, 0.2);
+  color: $adore-dark;
+  font-size: 0.92rem;
+}
+
+.pill-clear {
+  border: 0;
+  background: transparent;
+  color: $adore-pink;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+}
+.pill-clear:hover {
+  text-decoration: underline;
+}
+
+/* Nota + botón */
+.reservas-note {
+  color: $adore-gray;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.heart-dot {
+  color: $adore-pink;
+}
+
+.reservas-btn {
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 14px 30px rgba(255, 59, 107, 0.22);
+}
+
+.adore-confirmation {
+  border-radius: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.confirmation-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.confirmation-icon {
+  color: $adore-pink;
+  font-size: 1.1rem;
+}
+
+.confirmation-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.is-invalid {
+  border-color: rgba(255, 59, 107, 0.65) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 59, 107, 0.12) !important;
+}
+
+.invalid-hint {
+  display: block;
+  margin-top: 0.35rem;
+  color: rgba(95, 52, 71, 0.85);
+  font-size: 0.85rem;
+}
+.adore-contact-simple {
+  background: #f8f9fb; // limpio tipo Iberostar, pero encaja con tu web
+}
+
+.contact-simple-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.25rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(95, 52, 71, 0.12);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.csc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 59, 107, 0.12);
+  color: $adore-pink;
+  font-size: 1.1rem;
+  flex: 0 0 44px;
+}
+
+.csc-title {
+  margin: 0 0 0.25rem 0;
+  font-weight: 700;
+  color: $adore-dark;
+}
+
+.csc-text {
+  color: $adore-gray;
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.csc-link {
+  color: $adore-pink;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.contact-simple-btn {
+  border-color: rgba(31, 31, 36, 0.25);
+  color: $adore-dark;
+
+  &:hover {
+    background: rgba(31, 31, 36, 0.06);
+  }
+}
