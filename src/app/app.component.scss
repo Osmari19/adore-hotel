@@ -935,3 +935,51 @@ section {
     background: rgba(31, 31, 36, 0.06);
   }
 }
+.lang-toggle {
+  background: none;
+  border: none;
+  color: #c2c2c2;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  opacity: 0.85;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.chevron {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.lang-menu {
+  border-radius: 14px;
+  padding: 0.4rem;
+  border: none;
+  background: rgba(20, 20, 24, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.lang-menu .dropdown-item {
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+
+  &:hover {
+    background: rgba(255, 59, 107, 0.15);
+  }
+}
+
+.lang-item {
+  list-style: none;
+  color: #a2a3aa;
+}

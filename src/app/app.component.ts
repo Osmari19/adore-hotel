@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 interface Room {
   name: string;
-  description: string;
   price: number;
   image: string;
+  id: string;
 }
 
 @Component({
@@ -14,11 +15,12 @@ interface Room {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslateModule],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   currentYear = new Date().getFullYear();
   selectedRoomType: string | null = null;
+  currentLang = 'es';
 
   checkinDate: string | null = null;
   checkoutDate: string | null = null;
@@ -26,23 +28,20 @@ export class AppComponent {
 
   rooms: Room[] = [
     {
+      id: 'FIRST_DATE',
       name: 'Habitación First Date',
-      description:
-        'Perfecta para vuestro primer encuentro en persona: ambiente íntimo, iluminación cálida y detalles acogedores.',
       price: 95,
       image: 'images/first-date.png',
     },
     {
       name: 'Suite Match',
-      description:
-        'Más espacio, zona de estar y decoración pensada para que la conversación fluya sin prisas.',
+      id: 'MATCH',
       price: 130,
       image: 'images/match-suite.png',
     },
     {
       name: 'Suite Infinity',
-      description:
-        'Nuestra experiencia más exclusiva: amenities premium, check-out flexible y máxima privacidad.',
+      id: 'INFINITY',
       price: 190,
       image: 'images/infinity-suite.png',
     },
@@ -50,6 +49,37 @@ export class AppComponent {
 
   bookingResult: string | null = null;
   contactResult: string | null = null;
+
+  lang: 'es' | 'en' = 'es';
+
+  constructor(private translate: TranslateService) {
+    // Idiomas disponibles
+    this.translate.addLangs(['es', 'en']);
+    this.translate.setDefaultLang('es');
+
+    // 1) preferencia guardada
+    const saved = localStorage.getItem('lang') as 'es' | 'en' | null;
+
+    // 2) o idioma del navegador (si empieza por 'en')
+    const browser = (this.translate.getBrowserLang() || 'es').toLowerCase();
+    const initial: 'es' | 'en' =
+      saved ?? (browser.startsWith('en') ? 'en' : 'es');
+
+    this.setLang(initial);
+  }
+
+  ngOnInit() {
+    const saved = localStorage.getItem('lang') || 'es';
+    this.currentLang = saved;
+    this.translate.use(saved);
+  }
+
+  setLang(lang: 'es' | 'en') {
+    this.lang = lang;
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+  }
 
   onSubmitBooking(form: any) {
     if (form.valid) {
@@ -115,5 +145,11 @@ export class AppComponent {
     const start = new Date(this.checkinDate);
     const end = new Date(this.checkoutDate);
     this.dateError = end < start;
+  }
+
+  changeLang(lang: string) {
+    this.currentLang = lang;
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
   }
 }

@@ -1,0 +1,115 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "CONCEPT": "Concept",
+    "ROOMS": "Rooms",
+    "BOOKINGS": "Bookings",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "SUBTITLE": "Where love finds its place: an intimate refuge in the heart of Galicia, created for real encounters—unhurried, meaningful, and sincere.",
+    "CTA_BOOK": "Book encounter",
+    "CTA_KNOW": "Discover Adore"
+  },
+  "CONCEPT": {
+    "TITLE": "The Adore concept",
+    "P1": "In a world that moves too fast and where connections can feel fleeting, Adore Hotel is born as a place where love can be felt again—lived again—breathed in. Our rural boutique hotel in Eirexalba is more than accommodation: it’s where that “click” so many search for finally becomes real.",
+    "P2": "Here, sensory design, calm aesthetics, and intimate experiences intertwine to create a refuge where kindred souls can recognize each other—without rush, without noise, without masks. Light, aromas, music, landscape, and warm service are crafted so connection flows naturally and authentically.",
+    "P3": "This isn’t just another hotel: it’s for those who believe meaningful encounters deserve a setting worthy of them.",
+    "P4": "Adore Hotel is created for those who want to live significant moments, celebrate a long-awaited meeting, or simply reconnect with themselves. Every stay is a story about to begin."
+  },
+  "STEPS": {
+    "ONE": {
+      "TITLE": "They meet",
+      "TEXT": "Two people connect through the app, a trip, or life itself: they like each other, they choose each other, and they feel there might be something more than messages and screens."
+    },
+    "TWO": {
+      "TITLE": "They decide to see each other",
+      "TEXT": "They choose Adore to gift themselves an unhurried encounter, in a curated, intimate, and safe setting—where they can be themselves, without judgment."
+    },
+    "THREE": {
+      "TITLE": "They live their encounter",
+      "TEXT": "Between special evenings, nature, and small details crafted with care, time fills with moments that leave a mark."
+    }
+  },
+  "ABOUT": {
+    "TITLE": "About Adore Hotel",
+    "P1": "Adore Hotel is reborn from a nature-surrounded building into a rural boutique of aesthetic calm and human connection. Every corner is designed to inspire serenity, beauty, and presence—from Romance rooms to Sensory Suites, everything invites you to slow down and feel.",
+    "P2": "We work with local producers, care for the environment, and commit to sustainable tourism that respects the land. Our true luxury isn’t excess, but attention to detail, silence when needed, and the feeling of being in a place that truly sees you.",
+    "P3": "Adore is a refuge for those who still believe a perfect match exists—and that love, in all its forms, deserves a special place to be born, grow, or be rediscovered.",
+    "QUOTE": "“We don’t sell rooms: we create spaces where emotion finds a place to stay.”",
+    "PILLS": {
+      "P1": "Intimate experiences",
+      "P2": "Crafted details",
+      "P3": "Real connection"
+    },
+    "IMAGES": {
+      "BREAKFAST": "Breakfast with local products at Adore Hotel",
+      "MASSAGE": "Relaxing couples massage at Adore Hotel",
+      "CHEESE": "Selection of local cheeses",
+      "JAM": "Artisan bread and local pastries",
+      "COSMETICS2": "Local, nearby products",
+      "COSMETICS": "Local product details"
+    }
+  },
+  "ROOMS": {
+    "TITLE": "Rooms",
+    "INTRO": "Each Adore room is designed to match a different chapter of your story: the thrill of a first meeting, growing complicity, or celebrating something real. Soft light, warm textures, and details that speak of care.",
+    "PER_NIGHT": "night",
+    "CTA": "Book this room",
+    "DESCRIPTIONS": {
+      "FIRST_DATE": "Ideal for your first in-person meeting: intimate atmosphere, warm lighting, and cozy details.",
+      "MATCH": "More space, a lounge area, and décor designed so the conversation flows without rush.",
+      "INFINITY": "Our most exclusive experience: premium amenities, flexible check-out, and maximum privacy."
+    }
+  },
+  "BOOKING": {
+    "TITLE": "Book your encounter",
+    "SUBTITLE": "Choose dates, pick a room, and let Adore set the scene. You only bring what matters: the person in front of you.",
+    "STEPS": {
+      "DATES": "Dates",
+      "ROOM": "Room",
+      "CONTACT": "Contact"
+    },
+    "FORM": {
+      "CHECKIN": "Check-in date",
+      "CHECKOUT": "Check-out date",
+      "ROOMTYPE": "Room type",
+      "ROOMTYPE_PLACEHOLDER": "Select an option",
+      "GUESTS": "Guests",
+      "FIRSTNAME": "First name",
+      "LASTNAME": "Last name",
+      "PHONE": "Phone",
+      "EMAIL": "Email",
+      "SPECIAL": "Any special detail? (optional)",
+      "SPECIAL_PLACEHOLDER": "Celebration, arrival time, romantic surprise...",
+      "NOTE": "Confirmation in minutes. No commitment until availability is validated.",
+      "BUTTON": "Confirm encounter"
+    },
+    "VALIDATION": {
+      "CHECKIN_REQUIRED": "Please select a check-in date.",
+      "CHECKOUT_REQUIRED": "Please select a check-out date.",
+      "DATE_ORDER": "Check-out date must be the same or later than check-in.",
+      "ROOM_REQUIRED": "Please select a room.",
+      "GUESTS_REQUIRED": "Please indicate number of guests.",
+      "GUESTS_RANGE": "Choose between 1 and 2 guests.",
+      "FIRSTNAME_REQUIRED": "First name is required.",
+      "LASTNAME_REQUIRED": "Last name is required.",
+      "MIN_2": "Please enter at least 2 characters.",
+      "PHONE_REQUIRED": "Phone number is required.",
+      "PHONE_PATTERN": "Enter a valid phone number (e.g., +34 600 000 000).",
+      "EMAIL_REQUIRED": "Email is required.",
+      "EMAIL_VALID": "Enter a valid email address.",
+      "SPECIAL_MAX": "Maximum 300 characters."
+    },
+    "CONFIRM": {
+      "TITLE": "Encounter on its way"
+    }
+  },
+  "COMMON": {
+    "CLOSE": "Close"
+  },
+  "FOOTER": {
+    "TEXT": "Adore Hotel · Your perfect match experience"
+  }
+}

@@ -2,7 +2,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#inicio">
-      <!-- Marca pequeña (A + corazón, o lo que uses en el nav) -->
       <img src="images/cora.png" alt="Adore Hotel" class="logo-adore me-2" />
     </a>
 
@@ -13,84 +12,95 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#inicio">Inicio</a>
+          <a class="nav-link" href="#inicio">{{ 'NAV.HOME' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#concepto">Concepto</a>
+          <a class="nav-link" href="#concepto">{{ 'NAV.CONCEPT' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#habitaciones">Habitaciones</a>
+          <a class="nav-link" href="#habitaciones">{{ 'NAV.ROOMS' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#reservas">Reservas</a>
+          <a class="nav-link" href="#reservas">{{ 'NAV.BOOKINGS' | translate }}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#contacto">{{ 'NAV.CONTACT' | translate }}</a>
+        </li> -->
       </ul>
+
+      <li class="nav-item dropdown ms-3 lang-item">
+        <div class="d-flex align-items-center">
+          <i class="lang-item fa-solid fa-earth-americas"></i>
+          <button class="lang-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ currentLang.toUpperCase() }} <span class="chevron">▾</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end lang-menu">
+            <li>
+              <button class="dropdown-item" (click)="changeLang('es')">
+                Español
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" (click)="changeLang('en')">
+                English
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" (click)="changeLang('fr')">
+                Français
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item" (click)="changeLang('gl')">
+                Gallego
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </li>
+
+
+
+
+
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <header id="inicio" class="hero-adore text-white vh-100 d-flex align-items-center">
-  <!-- Banda horizontal SOLO para el texto -->
   <div class="hero-band w-100">
     <div class="container text-center hero-content">
-      <!-- Logo grande principal -->
       <img src="images/logo-adore.png" alt="Adore Hotel" class="hero-logo mb-4" />
 
-
-
       <p class="lead mb-4">
-        Donde el amor encuentra su lugar, un refugio íntimo en el corazón de Galicia, creado para encuentros reales, sin
-        prisas y con sentido.
+        {{ 'HERO.SUBTITLE' | translate }}
       </p>
 
       <a href="#reservas" class="btn btn-primary btn-lg me-2">
-        Reservar encuentro
+        {{ 'HERO.CTA_BOOK' | translate }}
       </a>
       <a href="#concepto" class="btn btn-outline-light btn-lg">
-        Conoce Adore
+        {{ 'HERO.CTA_KNOW' | translate }}
       </a>
     </div>
   </div>
 </header>
 
-
-
 <!-- CONCEPTO ADORE -->
 <section id="concepto">
   <div class="container">
     <div class="text-center my-4">
-      <h2 class="mb-4 text-center section-title">El concepto Adore</h2>
+      <h2 class="mb-4 text-center section-title">{{ 'CONCEPT.TITLE' | translate }}</h2>
     </div>
+
     <div class="row justify-content-center mb-4">
       <div class="col-md-9">
-        <p class="text-start mb-3">
-          En un mundo donde el ritmo acelera y las conexiones parecen fugaces,
-          Adore Hotel nace como un espacio donde el amor vuelve a sentirse,
-          a vivirse, a respirarse. Nuestro hotel boutique rural, en Eirexalba,
-          es mucho más que un alojamiento: es el lugar donde ese “clic”
-          que tantos buscan, finalmente cobra vida.
-        </p>
-        <p class="text-start mb-3">
-          Aquí, el diseño sensorial, la calma estética y las experiencias íntimas
-          se entrelazan para crear un refugio donde las almas afines pueden
-          reconocerse sin prisas, sin ruido y sin máscaras. La luz, los aromas,
-          la música, el paisaje y la calidez del servicio están pensados para
-          permitir que la conexión fluya de manera natural y auténtica.
-        </p>
-        <p class="text-start mb-3">
-          Este no es un hotel cualquiera: es un lugar para quienes creen
-          que los encuentros importantes merecen un escenario a su altura.
-        </p>
-        <p class="text-start mb-0">
-          Adore Hotel está creado para quienes desean vivir momentos
-          significativos, celebrar un encuentro esperado o simplemente
-          reencontrarse consigo mismos. Cada estancia es una historia que
-          está a punto de empezar.
-        </p>
+        <p class="text-start mb-3">{{ 'CONCEPT.P1' | translate }}</p>
+        <p class="text-start mb-3">{{ 'CONCEPT.P2' | translate }}</p>
+        <p class="text-start mb-3">{{ 'CONCEPT.P3' | translate }}</p>
+        <p class="text-start mb-0">{{ 'CONCEPT.P4' | translate }}</p>
       </div>
     </div>
 
@@ -101,12 +111,8 @@
             <div class="step-badge">1</div>
           </div>
           <div class="step-content">
-            <h4 class="mb-2">Se encuentran</h4>
-            <p class="mb-0">
-              Dos personas conectan a través de la app, de un viaje o de la vida:
-              se gustan, se eligen y sienten que puede haber algo más que mensajes
-              y pantallas.
-            </p>
+            <h4 class="mb-2">{{ 'STEPS.ONE.TITLE' | translate }}</h4>
+            <p class="mb-0">{{ 'STEPS.ONE.TEXT' | translate }}</p>
           </div>
         </div>
       </div>
@@ -117,11 +123,8 @@
             <div class="step-badge">2</div>
           </div>
           <div class="step-content">
-            <h4 class="mb-2">Deciden verse</h4>
-            <p class="mb-0">
-              Eligen Adore para regalarse un encuentro sin prisas, en un entorno
-              cuidado, íntimo y seguro, donde pueden ser ellos mismos sin juicios.
-            </p>
+            <h4 class="mb-2">{{ 'STEPS.TWO.TITLE' | translate }}</h4>
+            <p class="mb-0">{{ 'STEPS.TWO.TEXT' | translate }}</p>
           </div>
         </div>
       </div>
@@ -132,106 +135,70 @@
             <div class="step-badge">3</div>
           </div>
           <div class="step-content">
-            <h4 class="mb-2">Viven su encuentro</h4>
-            <p class="mb-0">
-              Entre veladas especiales, naturaleza y pequeños detalles pensados
-              con cariño, el tiempo se llena de momentos que dejan huella.
-            </p>
+            <h4 class="mb-2">{{ 'STEPS.THREE.TITLE' | translate }}</h4>
+            <p class="mb-0">{{ 'STEPS.THREE.TEXT' | translate }}</p>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
+<!-- SOBRE ADORE -->
 <section id="sobre-adore" class="py-5">
   <div class="container">
-    <h2 class="mb-5 text-center section-title">Sobre Adore Hotel</h2>
+    <h2 class="mb-5 text-center section-title">{{ 'ABOUT.TITLE' | translate }}</h2>
 
     <div class="row align-items-start g-5">
-      <!-- COLUMNA IZQUIERDA: RELATO -->
       <div class="col-lg-6">
-        <p class="mb-3">
-          Adore Hotel renace de un edificio rodeado de naturaleza para convertirse
-          en un boutique rural de calma estética y conexión humana. Cada rincón
-          ha sido diseñado para inspirar serenidad, belleza y presencia: desde
-          las habitaciones Romance hasta las Suites Sensoriales, todo invita
-          a bajar el ritmo y a sentir.
-        </p>
-        <p class="mb-3">
-          Trabajamos con productores locales, cuidamos el entorno y apostamos
-          por un turismo sostenible y respetuoso con el territorio. Nuestro
-          verdadero lujo no son los excesos, sino la atención al detalle,
-          el silencio cuando es necesario y la sensación de estar en un lugar
-          que te mira de verdad.
-        </p>
-        <p class="mb-0">
-          Adore es un refugio para quienes siguen creyendo que la media naranja
-          existe y que el amor —en todas sus formas— merece un lugar especial
-          para nacer, crecer o reencontrarse.
-        </p>
+        <p class="mb-3">{{ 'ABOUT.P1' | translate }}</p>
+        <p class="mb-3">{{ 'ABOUT.P2' | translate }}</p>
+        <p class="mb-0">{{ 'ABOUT.P3' | translate }}</p>
 
-        <!-- Frase tipo cita -->
         <div class="adore-quote mt-4">
-          “No vendemos habitaciones: creamos espacios donde la emoción
-          encuentra un lugar para quedarse.”
+          {{ 'ABOUT.QUOTE' | translate }}
         </div>
 
         <div class="adore-pill-group mt-3">
-          <span class="adore-pill">Experiencias íntimas</span>
-          <span class="adore-pill">Cuidado del detalle</span>
-          <span class="adore-pill">Conexión real</span>
+          <span class="adore-pill">{{ 'ABOUT.PILLS.P1' | translate }}</span>
+          <span class="adore-pill">{{ 'ABOUT.PILLS.P2' | translate }}</span>
+          <span class="adore-pill">{{ 'ABOUT.PILLS.P3' | translate }}</span>
         </div>
       </div>
 
-
-      <!-- COLUMNA DERECHA: HIGHLIGHTS -->
       <div class="col-lg-6">
         <div class="adore-products-grid">
-          <!-- FILA SUPERIOR: EXPERIENCIAS -->
           <div class="adore-product large">
-            <img src="/images/desayuno.png" alt="Desayuno con productos locales en Adore Hotel" />
+            <img src="/images/desayuno.png" [alt]="'ABOUT.IMAGES.BREAKFAST' | translate" />
           </div>
-
           <div class="adore-product large">
-            <img src="/images/masaje.jpg" alt="Masaje relajante para parejas en Adore Hotel" />
-          </div>
-
-          <!-- FILA INFERIOR: PRODUCTOS LOCALES -->
-          <div class="adore-product small">
-            <img src="/images/quesos.jpg" alt="Selección de quesos locales" />
+            <img src="/images/masaje.jpg" [alt]="'ABOUT.IMAGES.MASSAGE' | translate" />
           </div>
 
           <div class="adore-product small">
-            <img src="/images/mermelada.jpg" alt="Pan artesanal y bollería local" />
+            <img src="/images/quesos.jpg" [alt]="'ABOUT.IMAGES.CHEESE' | translate" />
           </div>
-
           <div class="adore-product small">
-            <img src="/images/cosmetica2.jpg" alt="Vino y productos de proximidad" />
+            <img src="/images/mermelada.jpg" [alt]="'ABOUT.IMAGES.JAM' | translate" />
           </div>
-
           <div class="adore-product small">
-            <img src="/images/cosmetica.jpg" alt="Detalle de productos locales" />
+            <img src="/images/cosmetica2.jpg" [alt]="'ABOUT.IMAGES.COSMETICS2' | translate" />
+          </div>
+          <div class="adore-product small">
+            <img src="/images/cosmetica.jpg" [alt]="'ABOUT.IMAGES.COSMETICS' | translate" />
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- HABITACIONES -->
 <section id="habitaciones" class="bg-light habitacion">
   <div class="container">
-    <h2 class="mb-4 text-center section-title">Habitaciones</h2>
+    <h2 class="mb-4 text-center section-title">{{ 'ROOMS.TITLE' | translate }}</h2>
     <p class="text-center mb-5">
-      Cada habitación de Adore está pensada para acompañar un momento distinto
-      de la historia: el nervio del primer encuentro, la complicidad que crece,
-      la celebración de algo que ya es real. Luz suave, texturas cálidas
-      y detalles que hablan de cuidado.
+      {{ 'ROOMS.INTRO' | translate }}
     </p>
 
     <div class="row g-4">
@@ -240,15 +207,17 @@
           <img [src]="room.image" class="card-img-top" [alt]="room.name" />
           <div class="card-body d-flex flex-column ">
             <h5 class="card-title">{{ room.name }}</h5>
-            <p class="card-text">
-              {{ room.description }}
-            </p>
+            <p class="card-text">{{ 'ROOMS.DESCRIPTIONS.' + room.id | translate }}</p>
+
             <p class="fw-bold mt-auto room-price">
-              <span class="price-badge">{{ room.price | currency:'EUR' }} / noche</span>
+              <span class="price-badge">
+                {{ room.price | currency:'EUR' }} / {{ 'ROOMS.PER_NIGHT' | translate }}
+              </span>
             </p>
+
             <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary btn-sm mt-2" (click)="selectRoom(room.name)">
-                Reservar esta habitación
+                {{ 'ROOMS.CTA' | translate }}
               </button>
             </div>
           </div>
@@ -262,156 +231,163 @@
 <section id="reservas" class="py-5 adore-reservas">
   <div class="container">
     <div class="text-center mb-4">
-      <h2 class="section-title">Reserva tu encuentro</h2>
+      <h2 class="section-title">{{ 'BOOKING.TITLE' | translate }}</h2>
       <p class="reservas-subtitle mt-3">
-        Elige fechas, habitación y deja que Adore prepare el escenario.
-        Tú solo trae lo importante: <strong>la persona delante de ti</strong>.
+        {{ 'BOOKING.SUBTITLE' | translate }}
       </p>
     </div>
 
     <div class="reservas-wrap mx-auto">
       <div class="reservas-card" [class.has-room]="selectedRoomType">
-        <!-- pasos -->
+
         <div class="reservas-steps">
-          <div class="r-step"><span class="r-dot">1</span> Fechas</div>
-          <div class="r-step"><span class="r-dot">2</span> Habitación</div>
-          <div class="r-step"><span class="r-dot">3</span> Contacto</div>
+          <div class="r-step"><span class="r-dot">1</span> {{ 'BOOKING.STEPS.DATES' | translate }}</div>
+          <div class="r-step"><span class="r-dot">2</span> {{ 'BOOKING.STEPS.ROOM' | translate }}</div>
+          <div class="r-step"><span class="r-dot">3</span> {{ 'BOOKING.STEPS.CONTACT' | translate }}</div>
         </div>
 
         <form #bookingForm="ngForm" (ngSubmit)="onSubmitBooking(bookingForm)" class="row g-3 mt-2" novalidate>
           <!-- FECHAS -->
           <div class="col-md-6">
-            <label class="form-label">Fecha de entrada</label>
+            <label class="form-label">{{ 'BOOKING.FORM.CHECKIN' | translate }}</label>
             <input #checkinInput type="date" class="form-control" name="checkin" [(ngModel)]="checkinDate" required
               #checkin="ngModel" (click)="openDatePicker(checkinInput)" (focus)="openDatePicker(checkinInput)"
-              (ngModelChange)="validateDates()"
-              [class.is-invalid]="(checkin.invalid && checkin.touched) || (dateError && (checkin.touched || checkout.touched))" />
+              (ngModelChange)="validateDates()" [class.is-invalid]="
+        (checkin.invalid && checkin.touched) ||
+        (dateError && (checkin.touched || checkout.touched))
+      " />
             <small class="invalid-hint" *ngIf="checkin.errors?.['required'] && checkin.touched">
-              Selecciona una fecha de entrada.
+              {{ 'BOOKING.VALIDATION.CHECKIN_REQUIRED' | translate }}
             </small>
           </div>
 
           <div class="col-md-6">
-            <label class="form-label">Fecha de salida</label>
+            <label class="form-label">{{ 'BOOKING.FORM.CHECKOUT' | translate }}</label>
             <input #checkoutInput type="date" class="form-control" name="checkout" [(ngModel)]="checkoutDate" required
               #checkout="ngModel" (click)="openDatePicker(checkoutInput)" (focus)="openDatePicker(checkoutInput)"
-              (ngModelChange)="validateDates()"
-              [class.is-invalid]="(checkout.invalid && checkout.touched) || (dateError && (checkin.touched || checkout.touched))" />
+              (ngModelChange)="validateDates()" [class.is-invalid]="
+        (checkout.invalid && checkout.touched) ||
+        (dateError && (checkin.touched || checkout.touched))
+      " />
 
             <small class="invalid-hint" *ngIf="checkout.errors?.['required'] && checkout.touched">
-              Selecciona una fecha de salida.
+              {{ 'BOOKING.VALIDATION.CHECKOUT_REQUIRED' | translate }}
             </small>
             <small class="invalid-hint" *ngIf="dateError && (checkin.touched || checkout.touched)">
-              La fecha de salida debe ser igual o posterior a la de entrada.
+              {{ 'BOOKING.VALIDATION.DATE_ORDER' | translate }}
             </small>
           </div>
 
           <!-- HABITACIÓN -->
           <div class="col-md-7">
-            <label class="form-label">Tipo de habitación</label>
+            <label class="form-label">{{ 'BOOKING.FORM.ROOMTYPE' | translate }}</label>
+
             <select class="form-select form-control-adore" name="roomType" [(ngModel)]="selectedRoomType" required
               #roomType="ngModel" [class.is-invalid]="roomType.invalid && roomType.touched">
-              <option [ngValue]="null" disabled>Selecciona una opción</option>
+              <option [ngValue]="null" disabled>
+                {{ 'BOOKING.FORM.ROOMTYPE_PLACEHOLDER' | translate }}
+              </option>
+
               <option *ngFor="let room of rooms" [ngValue]="room.name">
                 {{ room.name }}
               </option>
             </select>
 
             <small class="invalid-hint" *ngIf="roomType.errors?.['required'] && roomType.touched">
-              Selecciona una habitación.
+              {{ 'BOOKING.VALIDATION.ROOM_REQUIRED' | translate }}
             </small>
 
             <div *ngIf="selectedRoomType" class="selected-room-pill mt-2">
-              Habitación seleccionada: <strong>{{ selectedRoomType }}</strong>
+              {{ 'BOOKING.FORM.SELECTED_ROOM' | translate }}: <strong>{{ selectedRoomType }}</strong>
               <button type="button" class="pill-clear" (click)="selectedRoomType = null">
-                Cambiar
+                {{ 'BOOKING.FORM.CHANGE' | translate }}
               </button>
             </div>
           </div>
 
           <div class="col-md-5">
-            <label class="form-label">Personas</label>
+            <label class="form-label">{{ 'BOOKING.FORM.GUESTS' | translate }}</label>
             <input type="number" class="form-control form-control-adore" name="guests" ngModel required min="1" max="2"
               #guests="ngModel" [class.is-invalid]="guests.invalid && guests.touched" />
             <small class="invalid-hint" *ngIf="guests.errors?.['required'] && guests.touched">
-              Indica cuántas personas.
+              {{ 'BOOKING.VALIDATION.GUESTS_REQUIRED' | translate }}
             </small>
             <small class="invalid-hint" *ngIf="(guests.errors?.['min'] || guests.errors?.['max']) && guests.touched">
-              Elige entre 1 y 2 personas.
+              {{ 'BOOKING.VALIDATION.GUESTS_RANGE' | translate }}
             </small>
           </div>
 
           <!-- CONTACTO -->
           <div class="col-md-4">
-            <label class="form-label">Nombre</label>
+            <label class="form-label">{{ 'BOOKING.FORM.FIRSTNAME' | translate }}</label>
             <input type="text" class="form-control form-control-adore" name="firstName" ngModel required minlength="2"
               #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched" />
             <small class="invalid-hint" *ngIf="firstName.errors?.['required'] && firstName.touched">
-              El nombre es obligatorio.
+              {{ 'BOOKING.VALIDATION.FIRSTNAME_REQUIRED' | translate }}
             </small>
             <small class="invalid-hint" *ngIf="firstName.errors?.['minlength'] && firstName.touched">
-              Escribe al menos 2 caracteres.
+              {{ 'BOOKING.VALIDATION.MIN_2' | translate }}
             </small>
           </div>
 
           <div class="col-md-4">
-            <label class="form-label">Apellidos</label>
+            <label class="form-label">{{ 'BOOKING.FORM.LASTNAME' | translate }}</label>
             <input type="text" class="form-control form-control-adore" name="lastName" ngModel required minlength="2"
               #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched" />
             <small class="invalid-hint" *ngIf="lastName.errors?.['required'] && lastName.touched">
-              Los apellidos son obligatorios.
+              {{ 'BOOKING.VALIDATION.LASTNAME_REQUIRED' | translate }}
             </small>
             <small class="invalid-hint" *ngIf="lastName.errors?.['minlength'] && lastName.touched">
-              Escribe al menos 2 caracteres.
+              {{ 'BOOKING.VALIDATION.MIN_2' | translate }}
             </small>
           </div>
 
           <div class="col-md-4">
-            <label class="form-label">Teléfono</label>
+            <label class="form-label">{{ 'BOOKING.FORM.PHONE' | translate }}</label>
             <input type="tel" class="form-control form-control-adore" name="phone" ngModel required
               pattern="^\s*(\+?\d[\d\s-]{8,})\s*$" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched"
-              placeholder="+34 6XX XXX XXX" inputmode="tel" autocomplete="tel" />
+              [placeholder]="'BOOKING.FORM.PHONE_PLACEHOLDER' | translate" inputmode="tel" autocomplete="tel" />
             <small class="invalid-hint" *ngIf="phone.errors?.['required'] && phone.touched">
-              El teléfono es obligatorio.
+              {{ 'BOOKING.VALIDATION.PHONE_REQUIRED' | translate }}
             </small>
             <small class="invalid-hint" *ngIf="phone.errors?.['pattern'] && phone.touched">
-              Introduce un teléfono válido (ej: +34 600 000 000).
+              {{ 'BOOKING.VALIDATION.PHONE_PATTERN' | translate }}
             </small>
           </div>
 
           <div class="col-12">
-            <label class="form-label">Correo electrónico</label>
+            <label class="form-label">{{ 'BOOKING.FORM.EMAIL' | translate }}</label>
             <input type="email" class="form-control form-control-adore" name="email" ngModel required email
-              #email="ngModel" [class.is-invalid]="email.invalid && email.touched" placeholder="tu@email.com"
-              autocomplete="email" />
+              #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+              [placeholder]="'BOOKING.FORM.EMAIL_PLACEHOLDER' | translate" autocomplete="email" />
             <small class="invalid-hint" *ngIf="email.errors?.['required'] && email.touched">
-              El email es obligatorio.
+              {{ 'BOOKING.VALIDATION.EMAIL_REQUIRED' | translate }}
             </small>
             <small class="invalid-hint" *ngIf="email.errors?.['email'] && email.touched">
-              Introduce un email válido.
+              {{ 'BOOKING.VALIDATION.EMAIL_VALID' | translate }}
             </small>
           </div>
 
           <!-- EXTRA (opcional) -->
           <div class="col-12">
-            <label class="form-label">¿Algún detalle especial? (opcional)</label>
+            <label class="form-label">{{ 'BOOKING.FORM.SPECIAL' | translate }}</label>
             <textarea class="form-control form-control-adore" rows="3" name="specialRequest" ngModel maxlength="300"
               #specialRequest="ngModel"
               [class.is-invalid]="specialRequest.errors?.['maxlength'] && specialRequest.touched"
-              placeholder="Celebración especial, horario de llegada, sorpresa romántica..."></textarea>
+              [placeholder]="'BOOKING.FORM.SPECIAL_PLACEHOLDER' | translate"></textarea>
             <small class="invalid-hint" *ngIf="specialRequest.errors?.['maxlength'] && specialRequest.touched">
-              Máximo 300 caracteres.
+              {{ 'BOOKING.VALIDATION.SPECIAL_MAX' | translate }}
             </small>
           </div>
 
           <div class="col-12 d-flex flex-column flex-md-row gap-3 align-items-center justify-content-between mt-3">
             <div class="reservas-note">
               <span class="heart-dot">❤</span>
-              Confirmación en minutos. Sin compromiso hasta validar disponibilidad.
+              {{ 'BOOKING.FORM.NOTE' | translate }}
             </div>
 
             <button class="btn btn-primary reservas-btn" [disabled]="bookingForm.invalid || dateError">
-              Confirmar encuentro
+              {{ 'BOOKING.FORM.BUTTON' | translate }}
             </button>
           </div>
         </form>
@@ -420,17 +396,15 @@
         <div *ngIf="bookingResult" class="alert alert-success mt-4 adore-confirmation">
           <div class="confirmation-header">
             <span class="confirmation-icon">❤</span>
-            <strong>Encuentro en camino</strong>
+            <strong>{{ 'BOOKING.CONFIRM.TITLE' | translate }}</strong>
             <span class="confirmation-icon">❤</span>
           </div>
 
-          <p class="mt-2 mb-3">
-            {{ bookingResult }}
-          </p>
+          <p class="mt-2 mb-3">{{ bookingResult }}</p>
 
           <div class="confirmation-actions">
             <button class="btn btn-outline-secondary btn-sm" (click)="bookingResult = null">
-              Cerrar
+              {{ 'COMMON.CLOSE' | translate }}
             </button>
           </div>
         </div>
@@ -440,18 +414,9 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
 <!-- FOOTER -->
 <footer class="py-3 bg-dark text-white text-center">
   <small>
-    &copy; {{ currentYear }} Adore Hotel · Your perfect match experience
+    &copy; {{ currentYear }} {{ 'FOOTER.TEXT' | translate }}
   </small>
 </footer>
